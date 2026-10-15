@@ -8,10 +8,15 @@ bonuses; play until nothing fits.
 - **Runs anywhere.** Any modern browser on any OS — desktop or mobile.
 - **MIT licensed.** Hack on it, fork it, ship it.
 
+![Block Blast Clone gameplay](docs/screenshot.png)
+
 ## Play it
 
-Because the game uses ES modules, it must be served over `http://` (not opened directly as
-a `file://` path). Pick whichever you have:
+**Play instantly in your browser:** <https://sswheatley.github.io/block_blast/>
+(auto-deployed from `main` via GitHub Pages).
+
+Prefer to run it locally? The game uses ES modules, so it must be served over `http://`
+(not opened directly as a `file://` path). Pick whichever you have:
 
 ```bash
 # Option A — Python (usually preinstalled)

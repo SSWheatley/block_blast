@@ -91,9 +91,11 @@ block_blast_clone/
 - ⬜ Screen shake on big clears (optional).
 
 ### Phase 5 — Open-source packaging ⚠️ (mostly done)
-- ✅ `LICENSE` (MIT), ✅ `README.md`, ✅ `CONTRIBUTING.md`.
-- ⬜ Screenshot/GIF in README.
-- ⬜ Add a play link + deploy to GitHub Pages (`git init` + repo + Pages).
+- ✅ `LICENSE` (MIT), ✅ `README.md`, ✅ `CONTRIBUTING.md`, ✅ `.gitignore`.
+- ✅ Screenshot in README (`docs/screenshot.png`).
+- ✅ Published to GitHub: <https://github.com/SSWheatley/block_blast>.
+- ⬜ Enable GitHub Pages (Settings → Pages → Deploy from branch `main` / root) to activate
+  the play link <https://sswheatley.github.io/block_blast/> already referenced in the README.
 
 ### Phase 6 — Optional packaging (pick as desired)
 - PWA: web app manifest + service worker → "add to home screen", offline play.
