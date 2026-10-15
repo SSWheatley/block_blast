@@ -1,0 +1,37 @@
+// src/render/layout.js
+// Computes board + hand geometry for a given viewport (in CSS pixels).
+// Shared by the renderer and the input layer so they always agree on hit-testing.
+
+const BOARD_CELLS = 8;
+
+/**
+ * @param {number} width  viewport width in CSS px
+ * @param {number} height viewport height in CSS px
+ */
+export function computeLayout(width, height) {
+  const boardSize = Math.min(width * 0.94, height * 0.6);
+  const cell = boardSize / BOARD_CELLS;
+  const boardX = (width - boardSize) / 2;
+  const boardY = Math.max(height * 0.05, 8);
+
+  const handTop = boardY + boardSize + cell * 0.8;
+  const handAreaH = Math.max(cell * 2, height - handTop - 8);
+  const slotW = width / 3;
+  // Hand blocks are smaller; ensure a 5-wide piece fits and slots aren't too tall.
+  const handCell = Math.min(cell * 0.62, slotW / 5.6, handAreaH / 6);
+
+  const slots = [0, 1, 2].map((i) => ({
+    index: i,
+    cx: (i + 0.5) * slotW, // center x of the slot
+    cy: handTop + handAreaH / 2, // center y of the slot
+    w: slotW,
+    h: handAreaH,
+  }));
+
+  return {
+    width,
+    height,
+    board: { x: boardX, y: boardY, size: boardSize, cell },
+    hand: { top: handTop, areaH: handAreaH, slotW, cell: handCell, slots },
+  };
+}
