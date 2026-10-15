@@ -38,7 +38,8 @@ Then open <http://localhost:8080> in your browser.
 
 ## Documentation
 
-- [`plan.md`](plan.md) — roadmap, architecture, and phase progress.
+- [`AGENTS.md`](AGENTS.md) — orientation for AI coding agents (and helpful for humans).
+- [`docs/plan.md`](docs/plan.md) — roadmap, architecture, and phase progress.
 - [`docs/game-design.md`](docs/game-design.md) — how the game actually works (rules,
   scoring formulas, systems). Kept in sync with the code.
 
@@ -72,5 +73,5 @@ with the original game or its publisher, and ships with original code and visual
 
 ## Roadmap
 
-See `plan.md`. Highlights: polish, PWA (installable/offline), optional Electron desktop
+See [`docs/plan.md`](docs/plan.md). Highlights: polish, PWA (installable/offline), optional Electron desktop
 build, and optional Capacitor Android APK.

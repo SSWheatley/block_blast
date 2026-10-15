@@ -2,7 +2,7 @@
 
 > **Living document.** This describes how the game *actually* works, updated as features
 > are built. If something here disagrees with the code, the code wins — fix this doc.
-> See `plan.md` for the roadmap.
+> See [`docs/plan.md`](./plan.md) for the roadmap.
 
 ## 1. Concept
 

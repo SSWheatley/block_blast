@@ -29,25 +29,31 @@ later if tests are ever added.
 
 ```
 block_blast_clone/
-├── plan.md                 # This file — master plan, updated as work progresses
+├── AGENTS.md               # Standard agent entry point (project context for AI agents)
 ├── README.md               # Project intro + play/build/contrib instructions
 ├── LICENSE                 # MIT
 ├── CONTRIBUTING.md
+├── .gitignore
+├── .github/workflows/
+│   └── pages.yml           # Auto-deploy the static site to GitHub Pages on push to main
 ├── index.html              # Entry point (canvas + script)
 ├── style.css
 ├── docs/
-│   └── game-design.md      # Living documentation: how the game functions
+│   ├── plan.md             # This file — master plan, updated as work progresses
+│   ├── game-design.md      # Living documentation: how the game functions
+│   └── screenshot.png      # README screenshot
 └── src/
-    ├── main.js             # Bootstrap, game loop (requestAnimationFrame), DPR scaling
+    ├── main.js             # Bootstrap, game loop (requestAnimationFrame), wiring, HUD
+    ├── input.js            # Pointer Events drag & drop (mouse + touch, one code path)
+    ├── storage.js          # High score persistence via localStorage
     ├── game/               # PURE logic — no rendering, no DOM
     │   ├── board.js        # 8×8 grid, occupancy, collision + bounds validation
     │   ├── pieces.js       # Piece shape definitions + bag-style RNG hand generator
     │   ├── scoring.js      # Score rules, line multipliers, combos
     │   └── state.js        # Game state machine: playing / game-over, hand mgmt
-    ├── render/
-    │   └── renderer.js     # Canvas draw: board, hand, HUD, ghost preview, animations
-    ├── input.js            # Pointer Events drag & drop (mouse + touch, one code path)
-    └── storage.js          # High score persistence via localStorage
+    └── render/
+        ├── layout.js       # Viewport geometry (shared by renderer + input)
+        └── renderer.js     # Canvas draw: board, hand, ghost preview, effects
 ```
 
 ## Game rules (summary — full detail in `docs/game-design.md`)
